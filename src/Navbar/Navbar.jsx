@@ -17,6 +17,9 @@ export default function Navbar(){
             <li>
                 <h4 className="nav_list">Hr Management</h4>
             </li>
+            {/* <li>
+                <h4 className="nav_list">Employee Management</h4>
+            </li> */}
             <li>
             <h4 className="nav_list" onClick={handleAssets}>Assets</h4>
             </li>
