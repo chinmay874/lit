@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 //import Forget_Password from "../Forget_Password/Forget_Password";
 // import Hr from "../Hr_Home/Hr_Home";
-export default function Login() {
+export default function Login({handleSignup}) {
     const emailRegex=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const PasswordRegex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
     const [Email, setEmail] = useState("");
@@ -20,10 +20,10 @@ export default function Login() {
         setPassword(e.target.value);
     }
 
-    function signUp(e) {
-        e.preventDefault();
-        navigate("/signUp");
-    }
+    // function signUp(e) {
+    //     e.preventDefault();
+    //     navigate("/signUp");
+    // }
 
     function login(e) {
         e.preventDefault(e);
@@ -56,7 +56,7 @@ export default function Login() {
 
     return (
         <div className="Login_page">
-            <button className="Signup_btn" onClick={signUp}>SignUp</button>
+            <button className="Signup_btn" onClick={handleSignup}>SignUp</button>
             <h1 className="form_header">Login</h1>
             <form className="form" >
             <div className="email">
