@@ -1,8 +1,19 @@
 import Login from "../Login/Login.jsx";
 import "./Main.css";
+import SignUp from "../SignUp/SignUp.jsx"
+import { useState } from "react";
 
 
 export default function Main(){
+    const  [showLogin, setShowLogin] = useState(true);
+
+    const handleSignup=()=>{
+        setShowLogin(false);
+    };
+
+    const handleLogin = () => {
+        setShowLogin(true);
+      };
 return(
     <div className="Container">
         <div className="LeftContainer">
@@ -11,7 +22,11 @@ return(
             <h2 className="Company_name">L-IT TRUELY SERVICES PVT LTD</h2>
         </div>
         <div className="RightContainer">
-            <Login/>
+            {showLogin ? (
+                <Login handleSignup={handleSignup}/>
+            ):(
+                <SignUp handleLogin={handleLogin}/>
+            )}
         </div>
     </div>
 )
