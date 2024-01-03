@@ -7,8 +7,14 @@ export default function Hr(){
         <div className="home">
             <Navbar/>
             <div className="Home_partition">
-            <SideBar/>
-            <p>This is HomePage</p>
+                <div className="sidebar">
+                    <SideBar/>
+                </div>
+                <div className="home">
+                    <p>Home</p>
+                </div>
+            
+            <p></p>
             </div>
         </div>
     )
