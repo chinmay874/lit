@@ -1,15 +1,15 @@
 import http from "../http-common";
 
-class TutorialDataService {
+export default function LitDataService(){
 //   getAll() {
 //     return http.get("/tutorials");
 //   }
 
-  get(id) {
-    return http.get(`/login/${id}`);
-  }
+  // get(id) {
+  //   return http.get(`/login/${id}`);
+  // }
 
-  create(data) {
+  const create=(data)=>{
     return http.post("/register", data);
   }
 
@@ -29,5 +29,3 @@ class TutorialDataService {
 //     return http.get(`/tutorials?title=${title}`);
 //   }
 }
-
-export default new TutorialDataService();

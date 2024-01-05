@@ -64,6 +64,8 @@ export default function Login({handleSignup}) {
                     className="user_value_email" 
                     type="email" 
                     placeholder="Enter email" 
+                    name="username"
+
                     value={Email} 
                     onChange={handleEmail}></input>
                     {/* <label className="domain">@littuss.com</label> */}
@@ -72,6 +74,7 @@ export default function Login({handleSignup}) {
                     className="user_value_password" 
                     type="password" 
                     placeholder="Enter Password" 
+                    name="password"
                     value={Password} 
                     onChange={handlePassword}></input><br />
                 <p className="reset_password"><Link to="/Forget_Password"><b>Forget Password?</b></Link></p>

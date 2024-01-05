@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import { useState } from "react";
+import LitDataService from "../services/lit-service";
 
 
 export default function SignUp({ handleLogin }) {
@@ -34,7 +35,14 @@ export default function SignUp({ handleLogin }) {
 
   function SignUp(e) {
     e.preventDefault(e);
-    console.log(input);
+
+    const existingData = JSON.parse(localStorage.getItem('User_Registration_Data')) || [];  //get existing data
+    const dataArray = Array.isArray(existingData) ? existingData : [];
+    const newData = [...dataArray, input];     //add new data
+    const jsonData = JSON.stringify(newData);     // convert in json
+
+    console.log(jsonData);
+
     if ((!input.First_name && !input.Last_name && !input.Email && !input.Mobile_number && !input.password)) {
       return alert("Please Enter all fields");
     }
@@ -48,22 +56,17 @@ export default function SignUp({ handleLogin }) {
       return alert("Please enter valid email");
     }
     else if (!regexPassword.test(input.Password)) {
-      return alert("Please enter valid Password(eg. abcdfhd2)");
+      return alert("Please enter valid Password(password must include atleast 1 capital 1 small 1 special symbol and 1 numerical character)");
     }
     else if (!regexPhone.test(input.Mobile_Number)) {
-      console.log(input.Mobile_number);
       return alert("Please enter valid Mobile no.");
     }
-    const existingData = JSON.parse(localStorage.getItem('User_Registration_Data')) || [];  //get existing data
-    console.log(existingData);
-    const dataArray = Array.isArray(existingData) ? existingData : [];
-    const newData = [...dataArray, input];     //add new data
-    console.log(newData);
-    const jsonData = JSON.stringify(newData);     // convert in json
+    
     localStorage.setItem('User_Registration_Data', jsonData); //Store in local
-    alert('User Registration data saved!');
+    alert('User Registration Successful');
+
+
     // localStorage.setItem(input, JSON.stringify(input));
-    // alert("Sign-Up Successfully");
     navigate("/");
   }
   // function Login(e){
