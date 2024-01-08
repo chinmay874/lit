@@ -6,6 +6,7 @@
     width: 100vw;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(96, 221, 221);
 }
 .img{
     display: flex;
@@ -21,17 +22,27 @@
     display: flex;
     flex-direction: row;
     margin: 1vw;
-    width: 40vw;
-    align-items: center;
-    justify-content: space-around;
+    width: 70vw;
+    /* align-items: center;*/
+    justify-content: space-around; 
+    padding: 0 4vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .userInfo{
-    margin: 1vw;
+    margin-right: 2vw;
 }
-.nav_list{
+.user_icon{
+    height: 3vw;
+    width: 3vw;
+}
+.assets{
+    :hover{
+        cursor: pointer;
+    }
+}
+/* .nav_list{
     /* border: 1px solid black; */
     /* border-radius: 2vw; */
     /* height: 10vh; */
     /* align-items: center;
     justify-content: space-around; */
-}
